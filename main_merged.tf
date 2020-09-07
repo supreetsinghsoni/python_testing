@@ -20,9 +20,11 @@ module "private_subnet" {
 #  availability_zones = var.subnet_availability_zones
 #  environment = var.environment
 #}
+
 module "vpc" {
   source = "./vpc_module"
   cidr_block = var.vpc_cidr_block
   name = var.vpc_name
   environment = var.vpc_environment
 }
+

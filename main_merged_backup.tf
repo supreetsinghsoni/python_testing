@@ -1,3 +1,10 @@
+module "vpc" {
+	
+  cidr_block = var.vpc_cidr_block
+  name = var.vpc_name
+  environment = var.vpc_environment
+}
+
 module "private_subnet" {
   source = "./subnet_module"
   vpc_id     = var.subnet_vpc_id
@@ -20,9 +27,3 @@ module "private_subnet" {
 #  availability_zones = var.subnet_availability_zones
 #  environment = var.environment
 #}
-module "vpc" {
-  source = "./vpc_module"
-  cidr_block = var.vpc_cidr_block
-  name = var.vpc_name
-  environment = var.vpc_environment
-}
